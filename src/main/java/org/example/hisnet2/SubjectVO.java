@@ -13,6 +13,7 @@ public class SubjectVO {
     private String classRoom;
     private String grade;
     private String profP;
+    private int viewCount;
 
     public SubjectVO() {}
 
@@ -109,6 +110,12 @@ public class SubjectVO {
     }
     public void setProfP(String profP) {
         this.profP = profP;
+    }
+    public int getViewCount() {
+        return viewCount;
+    }
+    public void setViewCount(int viewCount) {
+        this.viewCount = viewCount;
     }
 
 }

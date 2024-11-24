@@ -6,7 +6,9 @@
 
 <%
   int id = Integer.parseInt(request.getParameter("id"));
+
   SubjectDAO dao = new SubjectDAO();
+  dao.incrementViewCount(id);
   SubjectVO vo = dao.get(id);
 %>
 
@@ -60,6 +62,10 @@
   <tr>
     <th>유형</th>
     <td><%= vo.getGrade() %></td>
+  </tr>
+  <tr>
+    <th>조회수</th>
+    <td><%= vo.getViewCount() %></td>
   </tr>
 </table>
 <a href="list.jsp">목록으로 돌아가기</a>

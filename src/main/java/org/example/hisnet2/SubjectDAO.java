@@ -150,6 +150,17 @@ public class SubjectDAO {
         }
     }
 
+    public void incrementViewCount(int subjectId) {
+        String sql = "UPDATE subjects SET view_count = view_count + 1 WHERE id = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, subjectId);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     // 데이터베이스 연결 종료
     public void close() {
         if (conn != null) {
