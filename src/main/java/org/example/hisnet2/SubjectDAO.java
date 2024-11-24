@@ -106,6 +106,7 @@ public class SubjectDAO {
                     subject.setClassRoom(rs.getString("classRoom"));
                     subject.setGrade(rs.getString("grade"));
                     subject.setProfP(rs.getString("profP"));
+                    subject.setViewCount(rs.getInt("view_count"));
                 }
             }
         } catch (SQLException e) {
